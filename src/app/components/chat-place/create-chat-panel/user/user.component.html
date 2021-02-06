@@ -1,0 +1,5 @@
+<div *ngIf="currentUserName != user.login">
+  <span >{{user.login}}</span>
+  <button *ngIf="showAddButton" class="btn btn-success" (click)="clickAddUserButtonListener()">+</button>
+  <button *ngIf="!showAddButton" class="btn btn-danger" (click)="clickDeleteUserButtonListener()">-</button>
+</div>

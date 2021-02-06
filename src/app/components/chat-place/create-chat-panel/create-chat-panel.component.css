@@ -1,0 +1,30 @@
+.panel{
+  display: inline-block;
+  margin: 7px;
+  padding: 5px;
+  border: solid #D3D3D3 4px;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+}
+.panel_close{
+  display: none;
+}
+.userList p{
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.userList .user{
+  margin-bottom: 5px;
+}
+label{
+  font-weight: bold;
+}
+.chat_name_input{
+  border: none;
+  border-bottom: 2px solid red;
+}
+.chat_name_input:focus{
+  outline: none;
+}

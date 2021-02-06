@@ -1,0 +1,40 @@
+.chat-place{
+  position: absolute;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: auto;
+}
+.chat-place__chat-list{
+  padding: 5px;
+  margin: 0;
+  max-height: 1000px;
+  background: rgba(63, 63, 95, 0.9);
+  height: 100%;
+}
+.chat_place__container{
+  margin: 0;
+  position: relative;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+.chat_place__container__nav{
+  height: 15%;
+}
+.chat_place__container__chat-panel{
+  position: absolute;
+  top: 15%;
+  right: 0;
+}
+.chat_place__container__chat{
+  height: 85%;
+  overflow: auto;
+}
+
+

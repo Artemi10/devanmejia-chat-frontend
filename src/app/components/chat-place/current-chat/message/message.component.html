@@ -1,0 +1,11 @@
+<div class="message">
+  <div *ngIf="isCurrentUserLogin()" class="message_mine">
+    {{message.content}}<br>
+    <small class="message__information">{{message.creationTime | date}}</small>
+  </div>
+  <div *ngIf="!isCurrentUserLogin()" class="message_yours">
+    <small class="message__information">{{message.user.login}}</small><br>
+    {{message.content}}<br>
+    <small class="message__information">{{message.creationTime | date}}</small>
+  </div>
+</div>

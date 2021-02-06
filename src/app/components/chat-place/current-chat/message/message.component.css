@@ -1,0 +1,25 @@
+.message{
+  display: flex;
+  flex-direction: row;
+}
+.message_mine{
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+}
+.message_yours{
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #eee;
+}
+.message__information{
+  font-size: 12px;
+}
+
+

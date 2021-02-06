@@ -1,0 +1,20 @@
+<div class="row no-gutters"><a routerLink="/logIn">LogIn</a></div>
+<form class="form-signin">
+  <img class="mb-4" src="../../../../assets/images/icons/auth.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+  <label for="inputLogin" class="sr-only">Login</label>
+  <input type="text" id="inputLogin" class="form-control" placeholder="Login" required="" autofocus="" name="login" [(ngModel)]="userSignUpForm.login">
+  <label for="inputFirstName" class="sr-only">First name</label>
+  <input type="text" id="inputFirstName" class="form-control" placeholder="First name" required="" autofocus="" name="firstName" [(ngModel)]="userSignUpForm.firstName">
+  <label for="inputLastName" class="sr-only">Last name</label>
+  <input type="text" id="inputLastName" class="form-control" placeholder="Last name" required="" autofocus="" name="lastName" [(ngModel)]="userSignUpForm.lastName">
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password" [(ngModel)]="userSignUpForm.password">
+  <label for="inputRePassword" class="sr-only">Repeat password</label>
+  <input type="password" id="inputRePassword" class="form-control" placeholder="Repeat password" required="" name="rePassword" [(ngModel)]="userSignUpForm.rePassword">
+  <label for="inputAge" class="sr-only">Age</label>
+  <input type="text" id="inputAge" class="form-control last" placeholder="Age" required="" name="age" [(ngModel)]="userSignUpForm.age">
+  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="signUp()">Sign up</button>
+  <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+</form>
+

@@ -1,0 +1,31 @@
+.chat{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(220, 221, 245);
+  margin: 10px;
+  overflow: auto;
+  height: 100%;
+  color: #363656;
+}
+.chat_clicked{
+  color: rgb(220, 221, 245);
+  background-color: #363656;
+}
+.chat_hidden{
+  display: none;
+}
+.chat__information{
+  padding: 5px;
+}
+.chat__new-messages_hidden{
+  display: none;
+}
+.chat__new-messages_shown{
+  width: 13px;
+  height: 13px;
+  background-color: #2BE940;
+  border-radius: 100%;
+  display: block;
+}

@@ -1,0 +1,11 @@
+<div class="chat-footer">
+  <div class="chat-footer__button" (click)="clickAddFileButtonListener()">
+    <img src="./assets/images/icons/add-file.png">
+  </div>
+  <div class="chat-footer__input">
+    <textarea autosize class="chat-footer__input__textarea" placeholder="Write your message..." rows="1" [(ngModel)]="messageContent"></textarea>
+  </div>
+  <div class="chat-footer__button" (click)="clickSendButtonListener()">
+    <img src="./assets/images/icons/send.png">
+  </div>
+</div>

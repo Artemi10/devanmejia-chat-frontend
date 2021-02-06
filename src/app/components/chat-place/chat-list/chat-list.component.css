@@ -1,0 +1,25 @@
+.chat-list{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-list__tittle{
+  font-size: 22px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(220, 221, 245);
+}
+.chat-list__chats{
+  overflow: auto;
+}
+.chat-list__chats_empty{
+  color: rgb(220, 221, 245);
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+}
+

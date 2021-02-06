@@ -1,0 +1,12 @@
+<div class="current-chat" #chatElement>
+  <div class="current-chat__messages" [ngClass]="messageService" *ngIf="!isMessageListEmpty()">
+    <ng-container *ngFor="let message of messageService.messages">
+      <app-message [message]="message"></app-message>
+    </ng-container>
+  </div>
+  <div class="current-chat__preview" *ngIf="isMessageListEmpty()">
+    <img src="../../../../assets/images/backgrounds/chat-preview.png">
+  </div>
+</div>
+
+

@@ -1,0 +1,11 @@
+<div class="panel" [ngClass]="{'panel_close' : !openChatPanelListenerFlag}">
+  <label>Chat name</label>
+  <input type="text" class="chat_name_input" [(ngModel)]="chatName">
+  <p>Choose users:</p>
+  <div *ngFor="let user of users" class="user">
+    <app-user [user]="user" (addUserToChatEvent)="addUserToChatList($event)" (deleteUserFromChatEvent)="deleteUserFromChatList($event)"></app-user>
+  </div>
+  <button class="btn btn-outline-info" (click)="createChat()">Create chat</button>
+</div>
+
+

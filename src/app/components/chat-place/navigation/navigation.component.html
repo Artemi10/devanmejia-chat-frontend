@@ -1,0 +1,7 @@
+<div class="header d-flex flex-column flex-md-row align-items-center">
+  <p class="header__user-information my-0 mr-md-auto">{{currentUserService.user.firstName}} {{currentUserService.user.lastName}}</p>
+  <nav class="header__buttons my-2 my-md-0 mr-md-3">
+    <a (click)="clickCreateChatButtonListener()" class="header__buttons__button">Create Chat</a>
+    <a (click)="exit()" class="header__buttons__button">Exit</a>
+  </nav>
+</div>
