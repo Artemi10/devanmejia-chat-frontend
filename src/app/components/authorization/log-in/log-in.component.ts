@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthorizationService} from "../../../services/authorization/authorization.service";
-import {CheckFormsService} from "../../../services/checkForms/check-forms.service";
+import { Component} from '@angular/core';
+import {AuthorizationService} from '../../../services/authorization/authorization.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthenticationService} from '../../../services/authentication/authentication.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -9,17 +11,29 @@ import {CheckFormsService} from "../../../services/checkForms/check-forms.servic
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent  {
-  public userLogInForm: any={
-    login: '',
-    password:''
+  public logInForm: FormGroup = new FormGroup({});
+  public errorMessage = '';
+  constructor(private authorizationService: AuthorizationService, private authenticationService: AuthenticationService,
+              private router: Router) {
+    this.logInForm.addControl('login', new FormControl('', Validators.required));
+    this.logInForm.addControl('password', new FormControl('', Validators.required));
   }
 
-  constructor(private authorizationService:AuthorizationService, private checkFormsService:CheckFormsService) { }
-   logIn():void{
-    let message = this.checkFormsService.checkLogInForm(this.userLogInForm);
-    if(message==="")
-      this.authorizationService.sendLogInRequest(this.userLogInForm);
-    else alert(message)
+  public sendLogInRequest(): void{
+    this.authorizationService.sendLogInUserRequest(this.logInForm.value)
+      .catch((error) => {
+        if (error.status === 200) {
+          this.authenticationService.setToken(error.error.text);
+          this.router.navigate(['/chat']);
+        }
+        if (error.status === 401){
+          this.errorMessage = 'Login and password are incorrect';
+        }
+      });
+  }
+
+  public checkInput(inputName: string): boolean{
+    return this.logInForm.controls[inputName].invalid && this.logInForm.controls[inputName].touched;
   }
 
 }

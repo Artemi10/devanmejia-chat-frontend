@@ -1,11 +1,18 @@
-<div class="row no-gutters"><a routerLink="/signUp">SignUp</a></div>
-<form class="form-signin">
-  <img class="mb-4" src="../../../../assets/images/icons/auth.png" alt="" width="72" height="72">
+<a class="sign-up-href" routerLink="/signUp">SignUp</a>
+<form class="log-in__form" [formGroup]="logInForm" (ngSubmit)="sendLogInRequest()">
+  <img class="log-in__form__logo" src="../../../../assets/images/icons/auth.png">
   <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
-  <label for="inputEmail" class="sr-only">Login</label>
-  <input type="text" id="inputEmail" class="form-control" placeholder="Login" required="" autofocus="" name="login" [(ngModel)]="userLogInForm.login">
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password" [(ngModel)]="userLogInForm.password">
-  <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="logIn()">Log in</button>
-  <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+  <div class="log-in__form__input">
+    <div class="log-in__form__input__warning" *ngIf="checkInput('login')">Please, enter login</div>
+    <input class="log-in__form__input__place form-control" [ngClass]="{'log-in__form__input__place_error' : checkInput('login')}" type="text" placeholder="Login" formControlName="login">
+  </div>
+  <div class="log-in__form__input">
+    <div class="log-in__form__input_warning" *ngIf="checkInput('password')">Please, enter password</div>
+    <input class="log-in__form__input__place form-control" [ngClass]="{'log-in__form__input__place_error' : checkInput('password')}" type="password" placeholder="Password" formControlName="password">
+  </div>
+  <p *ngIf="errorMessage != ''" class="log-in__form__warning">{{errorMessage}}</p>
+  <div class="log-in__form__input">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="logInForm.invalid">Log in</button>
+  </div>
+  <p class="log-in__form__copyright text-muted">© 2020-2021</p>
 </form>
