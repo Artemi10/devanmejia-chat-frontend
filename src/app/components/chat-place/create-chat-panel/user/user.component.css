@@ -1,5 +1,30 @@
-.btn{
-  padding: 4px;
-  margin-right: 5px;
-  margin-left: 5px;
+.user{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.user__login{
+  margin-right: 15px;
+}
+.user__add-button{
+  outline: none !important;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: #32CD32;
+  color: rgb(255, 255, 255);
+}
+.user__delete-button{
+  outline: none !important;
+  border: none;
+  width: 20px;
+  height: 20px;
+  background-color: #c01934;
+  color: rgb(255, 255, 255);
+}
+.user__delete-button,
+.user__add-button{
+  margin-right: 20px;
 }

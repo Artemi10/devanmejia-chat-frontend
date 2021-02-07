@@ -15,6 +15,7 @@ export class CreateChatPanelComponent {
   public chatName = '';
   public warningMessage = '';
   private chatUsers: User[] = [];
+  private chatUsersAmount = 0;
   @Input() public openChatPanelListenerFlag: boolean;
   @Output() public createNewChatEvent = new EventEmitter();
 
@@ -24,9 +25,11 @@ export class CreateChatPanelComponent {
 
   public deleteUserFromChatList(user: User): void{
     this.chatUsers.splice(this.chatUsers.indexOf(user));
+    this.chatUsersAmount--;
   }
   public addUserToChatList(user: User): void{
     this.chatUsers.push(user);
+    this.chatUsersAmount++;
   }
 
   public createChat(): void{
@@ -41,7 +44,13 @@ export class CreateChatPanelComponent {
     else{
       this.warningMessage = 'Add users or write correct name';
     }
+  }
 
+  public isChatNameEmpty(): boolean{
+    return this.chatName === '';
+  }
+  public isCreateButtonDisabled(): boolean{
+    return this.isChatNameEmpty() || this.chatUsersAmount === 0;
   }
 
 

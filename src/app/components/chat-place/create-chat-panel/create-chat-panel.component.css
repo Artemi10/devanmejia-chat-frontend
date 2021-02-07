@@ -1,8 +1,7 @@
 .panel{
-  display: inline-block;
   margin: 7px;
   padding: 5px;
-  border: solid #D3D3D3 4px;
+  border: solid rgba(63, 63, 95, 0.9) 4px;
   overflow: auto;
   background-color: rgb(255, 255, 255);
   z-index: 2;
@@ -10,21 +9,39 @@
 .panel_close{
   display: none;
 }
-.userList p{
+.panel__chat-name{
+  border: none;
+  outline: none !important;
+  border-bottom: 2px solid #32CD32;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.panel__chat-name_error{
+  border-bottom: 2px solid #c01934;
+}
+.panel__user-list__tittle{
   font-weight: bold;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.userList .user{
+.panel__create-button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
   margin-bottom: 5px;
-}
-label{
-  font-weight: bold;
-}
-.chat_name_input{
+  text-align: center;
+  outline: none !important;
   border: none;
-  border-bottom: 2px solid red;
+  background-color: #585886;
+  color: rgb(220, 221, 245);
+  padding: 7px;
+  border-radius: 5px;
 }
-.chat_name_input:focus{
-  outline: none;
+.panel__create-button:hover{
+  background-color: #20203E;
+}
+.panel__create-button:disabled,
+.panel__create-button[disabled]{
+  background-color: rgba(32, 32, 62, 0.7);
+  color: rgba(220, 221, 245, 0.7);
 }

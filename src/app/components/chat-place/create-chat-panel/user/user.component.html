@@ -1,5 +1,5 @@
-<div *ngIf="currentUserName != user.login">
-  <span >{{user.login}}</span>
-  <button *ngIf="showAddButton" class="btn btn-success" (click)="clickAddUserButtonListener()">+</button>
-  <button *ngIf="!showAddButton" class="btn btn-danger" (click)="clickDeleteUserButtonListener()">-</button>
+<div class="user" *ngIf="currentUserName != user.login">
+  <p class="user__login">{{user.login}}</p>
+  <button class="user__add-button" *ngIf="showAddButton" (click)="clickAddUserButtonListener()">+</button>
+  <button class="user__delete-button" *ngIf="!showAddButton" (click)="clickDeleteUserButtonListener()">-</button>
 </div>
