@@ -1,39 +1,71 @@
 .panel{
+  display: flex;
+  flex-direction: column;
   margin: 7px;
   padding: 5px;
-  border: solid rgba(63, 63, 95, 0.9) 4px;
-  overflow: auto;
-  background-color: rgb(255, 255, 255);
-  z-index: 2;
 }
-.panel_close{
-  display: none;
+.panel__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.panel__header__tittle{
+  font-size: 22px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: rgb(220, 221, 245);
+}
+.panel__header__go-back{
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(220, 221, 245);
+}
+.panel__header__go-back:hover{
+  color: rgb(0, 0, 0);
+}
+.panel__header__container{
+  width: 25px;
+  height: 25px;
 }
 .panel__chat-name{
+  display: block;
   border: none;
   outline: none !important;
-  border-bottom: 2px solid #32CD32;
-  padding: 5px;
+  background: rgba(63, 63, 95, 0.9);
+  height: 25px;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px 10px;
+  color: rgb(220, 221, 245);
+  border-bottom: 4px solid #32CD32;
   margin-bottom: 10px;
+  margin-top: 5px;
+}
+.panel__chat-name::placeholder{
+  color: rgb(220, 221, 245);
 }
 .panel__chat-name_error{
-  border-bottom: 2px solid #c01934;
+  border-bottom: 4px solid #c01934;
 }
 .panel__user-list__tittle{
   font-weight: bold;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: rgb(220, 221, 245);
+  font-size: 20px;
 }
 .panel__create-button{
   display: block;
-  margin: 0 auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px auto;
   text-align: center;
   outline: none !important;
   border: none;
-  background-color: #585886;
-  color: rgb(220, 221, 245);
+  background-color: rgb(220, 221, 245);
+  color: #585886;
+  font-weight: bold;
   padding: 7px;
   border-radius: 5px;
 }

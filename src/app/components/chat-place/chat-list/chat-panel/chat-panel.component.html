@@ -1,0 +1,7 @@
+<div class="chat-panel">
+  <label class="chat-panel__search-label" for="search-input">
+    <img class="chat-panel__search-label__icon" src="../../../../../assets/images/icons/search.png">
+  </label>
+  <input class="chat-panel__search-input" type="text" placeholder="Chat name..." [(ngModel)]="chatName" (ngModelChange)="changeChatNameListener()" id="search-input">
+  <p class="chat-panel__create-button" (click)="clickCreateButton()">+</p>
+</div>

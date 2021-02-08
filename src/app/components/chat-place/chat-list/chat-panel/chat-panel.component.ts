@@ -1,14 +1,14 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 import {ChatsService} from '../../../../services/chats/chats.service';
 
-
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-chat-panel',
+  templateUrl: './chat-panel.component.html',
+  styleUrls: ['./chat-panel.component.css']
 })
-export class SearchComponent{
+export class ChatPanelComponent{
   public chatName = '';
+  @Output() public clickCreateButtonEvent = new EventEmitter();
 
   constructor(private chatsService: ChatsService) {
     this.chatsService.showChatByName(this.chatName);
@@ -22,6 +22,7 @@ export class SearchComponent{
   public changeChatNameListener(): void{
     this.chatsService.showChatByName(this.chatName);
   }
-
-
+  public clickCreateButton(): void{
+    this.clickCreateButtonEvent.emit();
+  }
 }

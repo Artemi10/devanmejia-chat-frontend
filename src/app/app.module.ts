@@ -20,7 +20,8 @@ import {ChatListComponent} from './components/chat-place/chat-list/chat-list.com
 import {ChatComponent} from './components/chat-place/chat-list/chat/chat.component';
 import {UserComponent} from './components/chat-place/create-chat-panel/user/user.component';
 import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
-import { SearchComponent } from './components/chat-place/chat-list/search/search.component';
+import { ChatPanelComponent } from './components/chat-place/chat-list/chat-panel/chat-panel.component';
+import { LogOutPanelComponent } from './components/chat-place/log-out-panel/log-out-panel.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SearchComponent } from './components/chat-place/chat-list/search/search
       ChatListComponent,
       ChatComponent,
       UserComponent,
-      SearchComponent
+      ChatPanelComponent,
+      LogOutPanelComponent
     ],
   imports: [
     BrowserModule,

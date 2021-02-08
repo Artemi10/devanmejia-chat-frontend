@@ -1,11 +1,11 @@
 <div class="message">
   <div *ngIf="isCurrentUserLogin()" class="message_mine">
-    {{message.content}}<br>
-    <small class="message__information">{{message.creationTime | date}}</small>
+    <p class="message__content">{{message.content}}</p>
+    <small class="message__information">{{message.creationTime | date : 'HH:mm'}}</small>
   </div>
   <div *ngIf="!isCurrentUserLogin()" class="message_yours">
-    <small class="message__information">{{message.user.login}}</small><br>
-    {{message.content}}<br>
-    <small class="message__information">{{message.creationTime | date}}</small>
+    <small class="message__information__user-name">{{message.user.login}}</small>
+    <p class="message__content">{{message.content}}</p>
+    <small class="message__information">{{message.creationTime | date : 'HH:mm'}}</small>
   </div>
 </div>

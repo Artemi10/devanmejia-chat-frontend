@@ -10,6 +10,7 @@ import {ChatFromList} from '../../../models/chat-from-list.model';
 })
 export class ChatListComponent{
   @Output() public clickChatEvent = new EventEmitter();
+  @Output() public clickCreateButtonEvent = new EventEmitter();
 
   constructor(public chatsService: ChatsService) {
     chatsService.getChats();
@@ -18,6 +19,9 @@ export class ChatListComponent{
   public clickChatEventListener(id: number): void{
     this.chatsService.clickChat(id);
     this.clickChatEvent.emit(id);
+  }
+  public clickCreateButtonEventListener(): void{
+    this.clickCreateButtonEvent.emit();
   }
 
   public isChatListEmpty(): boolean{

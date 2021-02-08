@@ -1,4 +1,9 @@
-<div class="panel" [ngClass]="{'panel_close' : !openChatPanelListenerFlag}">
+<div class="panel">
+  <div class="panel__header">
+    <p class="panel__header__go-back" (click)="clickGoBackButtonListener()"><</p>
+    <p class="panel__header__tittle">Create chat</p>
+    <p class="panel__header__container"></p>
+  </div>
   <input class="panel__chat-name" type="text" placeholder="Chat name" [(ngModel)]="chatName" [ngClass]="{'panel__chat-name_error' : isChatNameEmpty()}">
   <div class="panel__user-list">
     <p class="panel__user-list__tittle">Choose users:</p>

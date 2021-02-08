@@ -16,8 +16,8 @@ export class CreateChatPanelComponent {
   public warningMessage = '';
   private chatUsers: User[] = [];
   private chatUsersAmount = 0;
-  @Input() public openChatPanelListenerFlag: boolean;
   @Output() public createNewChatEvent = new EventEmitter();
+  @Output() public closeCreateChatPanelEvent = new EventEmitter();
 
   constructor(private usersService: UsersService, private chatsService: ChatsService) {
     this.usersService.getAllUsers().then((users: User[]) => this.users = users);
@@ -37,7 +37,6 @@ export class CreateChatPanelComponent {
       const newChat: NewChat = new NewChat(this.chatName, this.chatUsers);
       this.chatsService.createChat(newChat)
         .subscribe((id: number) => {
-          this.openChatPanelListenerFlag = false;
           this.createNewChatEvent.emit(id);
         });
     }
@@ -51,6 +50,10 @@ export class CreateChatPanelComponent {
   }
   public isCreateButtonDisabled(): boolean{
     return this.isChatNameEmpty() || this.chatUsersAmount === 0;
+  }
+
+  public clickGoBackButtonListener(): void{
+    this.closeCreateChatPanelEvent.emit();
   }
 
 

@@ -1,10 +1,11 @@
 <div class="chat-place no-gutters">
-  <div class="chat-place__chat-list col-4">
-    <app-chat-list (clickChatEvent)="chooseNewChatListener($event)"></app-chat-list>
+  <div class="chat-place__lists col-4">
+    <app-chat-list class="chat-place__lists__list" [ngClass]="{'hidden' : !isChatListOpened}" (clickChatEvent)="chooseNewChatListener($event)" (clickCreateButtonEvent)="clickCreateChatButtonListener()"></app-chat-list>
+    <app-create-chat-panel class="chat-place__lists__list" [ngClass]="{'hidden' : isChatListOpened}" (createNewChatEvent)="chooseNewChatListener($event)" (closeCreateChatPanelEvent)="closeCreateChatPanel()"></app-create-chat-panel>
+    <app-log-out-panel class="chat-place__lists__log-out-panel"></app-log-out-panel>
   </div>
   <div class="chat_place__container col-8">
-    <app-navigation class="chat_place__container__nav" (clickCreateChatButton)="clickCreateChatButtonListener()"></app-navigation>
-    <app-create-chat-panel class="chat_place__container__chat-panel"[openChatPanelListenerFlag]="this.openChatPanelListenerFlag" (createNewChatEvent)="chooseNewChatListener($event)"></app-create-chat-panel>
+    <app-navigation class="chat_place__container__nav"></app-navigation>
     <app-current-chat class="chat_place__container__chat"></app-current-chat>
     <app-footer class="chat_place__container__footer" *ngIf="currentChatId != -1" [currentChatId]="currentChatId"></app-footer>
   </div>

@@ -3,23 +3,39 @@
   flex-direction: row;
 }
 .message_mine{
-  border-radius: 20px;
+  max-width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border-radius: 15px;
   padding: 8px 15px;
-  margin-left: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 5px 5px auto;
   color: white;
-  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background: #89A1FC;
 }
 .message_yours{
-  border-radius: 20px;
+  max-width: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  border-radius: 15px;
   padding: 8px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: #eee;
+  margin: 5px;
+  background: rgb(255, 255, 255);
+}
+.message__content{
+  margin-right: 5px;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .message__information{
   font-size: 12px;
 }
-
+.message__information__user-name{
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
 

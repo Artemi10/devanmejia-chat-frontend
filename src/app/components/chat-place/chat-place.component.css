@@ -10,31 +10,39 @@
   z-index: 1;
   margin: auto;
 }
-.chat-place__chat-list{
-  padding: 5px;
+.chat-place__lists{
+  display: flex;
+  flex-direction: column;
   margin: 0;
   max-height: 1000px;
-  background: rgba(63, 63, 95, 0.9);
   height: 100%;
+}
+.hidden{
+  display: none;
+}
+.chat-place__lists__list{
+  padding: 5px;
+  background: rgba(63, 63, 95, 0.9);
+  min-height: calc(100% - 50px);
+  overflow: auto;
+}
+.chat-place__lists__log-out-panel{
+  height: 50px;
+  background-color: #585886;
+}
+.chat_place__container__footer{
+  height: 50px;
 }
 .chat_place__container{
   margin: 0;
-  position: relative;
   max-height: 1000px;
   display: flex;
   flex-direction: column;
 }
 .chat_place__container__nav{
-  height: 15%;
-}
-.chat_place__container__chat-panel{
-  position: absolute;
-  top: 15%;
-  right: 0;
+  height: 75px;
 }
 .chat_place__container__chat{
-  height: 85%;
   overflow: auto;
 }
-
 

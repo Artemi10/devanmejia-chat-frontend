@@ -1,6 +1,6 @@
 <div class="chat-list">
   <p class="chat-list__tittle">Chat list</p>
-  <app-search></app-search>
+  <app-chat-panel (clickCreateButtonEvent)="clickCreateButtonEventListener()"></app-chat-panel>
   <div class="chat-list__chats" *ngIf="!isChatListEmpty()">
     <div *ngFor="let chat of chatsService.chats">
       <app-chat [chat]="chat" (clickChatEvent)="clickChatEventListener($event)"></app-chat>

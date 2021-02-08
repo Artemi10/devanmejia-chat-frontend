@@ -7,22 +7,25 @@
 }
 .user__login{
   margin-right: 15px;
+  color: rgb(220, 221, 245);
 }
 .user__add-button{
   outline: none !important;
   border: none;
-  width: 20px;
-  height: 20px;
+  padding: 5px;
   background-color: #32CD32;
+  width: 25px;
   color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 .user__delete-button{
   outline: none !important;
   border: none;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  padding: 5px;
   background-color: #c01934;
   color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 .user__delete-button,
 .user__add-button{
