@@ -6,7 +6,7 @@
   </div>
   <div class="chat_place__container col-8">
     <app-navigation class="chat_place__container__nav"></app-navigation>
-    <app-current-chat class="chat_place__container__chat"></app-current-chat>
+    <app-current-chat class="chat_place__container__chat" [ngClass]="{'chat_place__container__chat_footer-opened' : currentChatId != -1}"></app-current-chat>
     <app-footer class="chat_place__container__footer" *ngIf="currentChatId != -1" [currentChatId]="currentChatId"></app-footer>
   </div>
 </div>

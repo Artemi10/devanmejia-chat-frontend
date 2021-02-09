@@ -4,6 +4,8 @@ import {environment} from '../../../../../environments/environment';
 import {Message} from '../../../../models/message.model';
 import {MessagesService} from '../../../../services/messages/messages.service';
 import {ChatsService} from '../../../../services/chats/chats.service';
+import {AuthenticationService} from '../../../../services/authentication/authentication.service';
+
 declare var SockJS;
 declare var Stomp;
 
@@ -16,11 +18,10 @@ export class ChatComponent implements OnDestroy {
   @Input() public chat: ChatFromList;
   @Output() public clickChatEvent = new EventEmitter();
   private stompClient;
-  public hasNewMessages: boolean;
 
-  constructor(private messagesService: MessagesService, private chatsService: ChatsService) {
-    this.initializeWebSocketConnection();
-    this.hasNewMessages = false;
+  constructor(private messagesService: MessagesService, private chatsService: ChatsService,
+              private authenticationService: AuthenticationService) {
+    this.initializeMessageWebSocketConnection();
   }
 
   ngOnDestroy(): void {
@@ -29,16 +30,26 @@ export class ChatComponent implements OnDestroy {
 
   public clickChatEventListener(): void{
     this.clickChatEvent.emit(this.chat.id);
-    this.hasNewMessages = false;
     this.chat.read = true;
     this.chatsService.updateChat(this.chat);
+  }
+
+  public isLastMessageReceived(): boolean{
+    const userName: string = this.authenticationService.getUserName();
+    if (this.messagesService.messages.length === 0){
+      return this.chat.lastUserLogin !== userName;
+    }
+    else{
+      const lastMessage = this.messagesService.messages[this.messagesService.messages.length - 1];
+      return lastMessage.user.login !== userName;
+    }
   }
 
   public isChatEmpty(): boolean{
     return this.chat.lastUserLogin === '';
   }
 
-  private initializeWebSocketConnection(): void{
+  private initializeMessageWebSocketConnection(): void{
     this.stompClient = Stomp.over(new SockJS(environment.url + '/ws'));
     const that = this;
     return this.stompClient.connect({}, function(): void {
@@ -50,14 +61,12 @@ export class ChatComponent implements OnDestroy {
         if (that.chat.isClicked){
           that.chat.read = true;
           that.messagesService.addNewMessage(newMessage);
-        }else{
+        }
+        else{
           that.chat.read = false;
-          that.hasNewMessages = true;
         }
         that.chatsService.updateChat(that.chat);
       });
     });
   }
-
-
 }

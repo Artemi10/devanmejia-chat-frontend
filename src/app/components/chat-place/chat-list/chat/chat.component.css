@@ -24,9 +24,9 @@
 .chat__new-messages_shown{
   width: 13px;
   height: 13px;
-  background-color: #2BE940;
   border-radius: 100%;
   display: block;
+  background-color: #2BE940;
 }
 .chat__information__message{
   max-width: 100%;

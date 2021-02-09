@@ -44,5 +44,9 @@
 }
 .chat_place__container__chat{
   overflow: auto;
+  height: calc(100% - 75px);
+}
+.chat_place__container__chat_footer-opened{
+  height: calc(100% - 75px - 50px);
 }
 

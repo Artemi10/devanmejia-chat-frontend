@@ -5,5 +5,5 @@
     <p *ngIf="!isChatEmpty()" class="chat__information__message card-text">{{chat.lastUserLogin}}: {{chat.lastMessage}}</p>
     <p *ngIf="isChatEmpty()" class="chat__information__message card-text">Begin conversation...</p>
   </div>
-  <span class="chat__new-messages_hidden" [ngClass]="{'chat__new-messages_shown' : !chat.read || hasNewMessages}"></span>
+  <span class="chat__new-messages_hidden" [ngClass]="{'chat__new-messages_shown' : !chat.read}"></span>
 </div>
