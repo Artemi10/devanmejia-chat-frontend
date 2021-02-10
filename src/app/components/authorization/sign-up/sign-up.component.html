@@ -15,6 +15,13 @@
     <input class="sign-up__form__input__place form-control" [ngClass]="{'sign-up__form__input__place_error' : checkInput('lastName')}" type="text" placeholder="Last name" formControlName="lastName">
   </div>
   <div class="sign-up__form__input">
+    <div class="sign-up__form__input__warning" *ngIf="checkInput('gender')">Please, choose your gender</div>
+    <select class="sign-up__form__input__select form-control" [ngClass]="{'sign-up__form__input__select_error' : checkInput('gender')}" formControlName="gender">
+      <option class="sign-up__form__input__select__option">Male</option>
+      <option class="sign-up__form__input__select__option">Female</option>
+    </select>
+  </div>
+  <div class="sign-up__form__input">
     <div class="sign-up__form__input__warning" *ngIf="checkInput('password')">Please, enter password</div>
     <input class="sign-up__form__input__place form-control" [ngClass]="{'sign-up__form__input__place_error' : checkInput('password')}" type="password" placeholder="Password" formControlName="password">
   </div>

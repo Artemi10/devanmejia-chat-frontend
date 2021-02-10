@@ -22,7 +22,7 @@
   height: 72px;
   width: 72px;
 }
-.log-in__form__input__place{
+.sign-up__form__input__place{
   position: relative;
   box-sizing: border-box;
   height: auto;
@@ -31,6 +31,9 @@
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.sign-up__form__input__place::placeholder{
+  color: #888888;
 }
 .log-in__form__input__place:focus{
   z-index: 2;
@@ -43,6 +46,13 @@
   margin: 15px;
   color: #c01934;
 }
+.sign-up__form__input__select{
+  outline: none !important;
+  width: 100%;
+}
+.sign-up__form__input__select_error{
+  border-color: #c01934;
+ }
 .sign-up__form__copyright{
   margin-top: 20px;
 }

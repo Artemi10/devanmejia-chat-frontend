@@ -5,6 +5,10 @@
   align-items: center;
   margin-bottom: 10px;
 }
+.user__image{
+  width: 35px;
+  height: 35px;
+}
 .user__login{
   margin-right: 15px;
   color: rgb(220, 221, 245);

@@ -1,5 +1,8 @@
 <div class="header d-flex flex-column flex-md-row align-items-center">
-  <p class="header__user-information my-0 mr-md-auto">{{currentUserService.user.firstName}} {{currentUserService.user.lastName}}</p>
-  <nav class="header__buttons my-2 my-md-0 mr-md-3">
-  </nav>
+  <p class="header__tittle my-0 mr-md-auto">Devanmejia Chat</p>
+  <div class="header__user-information my-2 my-md-0 mr-md-3">
+    <p class="header__user-information__first-name">{{currentUserService.user.firstName}}</p>
+    <p class="header__user-information__last-name">{{currentUserService.user.lastName}}</p>
+    <img class="header__user-information__user-img" src="{{currentUserService.user.imageUrl}}">
+  </div>
 </div>

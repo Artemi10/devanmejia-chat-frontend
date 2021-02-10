@@ -20,6 +20,7 @@ export class SignUpComponent {
     this.signUpForm.addControl('firstName', new FormControl('', Validators.required));
     this.signUpForm.addControl('lastName', new FormControl('', Validators.required));
     this.signUpForm.addControl('rePassword', new FormControl('', [Validators.required, this.rePasswordValidator.bind(this)]));
+    this.signUpForm.addControl('gender', new FormControl('', Validators.required));
   }
 
   public sendSignUpRequest(): void{
@@ -44,6 +45,4 @@ export class SignUpComponent {
       NotEqual: true
     };
   }
-
-
 }

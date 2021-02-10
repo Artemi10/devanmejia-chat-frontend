@@ -11,7 +11,6 @@ import {ChatsService} from '../../../services/chats/chats.service';
   styleUrls: ['./create-chat-panel.component.css']
 })
 export class CreateChatPanelComponent {
-  public users: User[] = [];
   public chatName = '';
   public warningMessage = '';
   private chatUsers: User[] = [];
@@ -19,9 +18,7 @@ export class CreateChatPanelComponent {
   @Output() public createNewChatEvent = new EventEmitter();
   @Output() public closeCreateChatPanelEvent = new EventEmitter();
 
-  constructor(private usersService: UsersService, private chatsService: ChatsService) {
-    this.usersService.getAllUsers().then((users: User[]) => this.users = users);
-  }
+  constructor(public usersService: UsersService, private chatsService: ChatsService) {}
 
   public deleteUserFromChatList(user: User): void{
     this.chatUsers.splice(this.chatUsers.indexOf(user));
