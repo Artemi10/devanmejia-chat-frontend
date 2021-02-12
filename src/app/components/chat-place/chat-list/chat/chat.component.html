@@ -1,9 +1,14 @@
 <div class="chat card-body" (click)="clickChatEventListener()"
      [ngClass]="{'chat_clicked' : chat.isClicked, 'chat_hidden' : !chat.isShown}">
-  <div class="col-sm-8 chat__information">
-    <p class="card_tittle">{{chat.chatName}}</p>
-    <p *ngIf="!isChatEmpty()" class="chat__information__message card-text">{{chat.lastUserLogin}}: {{chat.lastMessage}}</p>
-    <p *ngIf="isChatEmpty()" class="chat__information__message card-text">Begin conversation...</p>
+  <div class="chat__information row no-gutters">
+    <div class="chat__information__container col-4">
+      <img class="chat__information__container__image" src="{{chat.imageUrl}}">
+    </div>
+    <div class="chat__information__content col-8" [ngClass]="{'chat__information__content_clicked' : chat.isClicked}">
+      <p class="card_tittle">{{chat.chatName}}</p>
+      <p *ngIf="!isChatEmpty()" class="chat__information__content__message card-text">{{chat.lastUserLogin}}: {{chat.lastMessage}}</p>
+      <p *ngIf="isChatEmpty()" class="chat__information__content__message card-text">Begin conversation...</p>
+    </div>
   </div>
   <span class="chat__new-messages_hidden" [ngClass]="{'chat__new-messages_shown' : !chat.read}"></span>
 </div>

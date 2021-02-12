@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {ChatFromList} from '../../../../models/chat-from-list.model';
 import {environment} from '../../../../../environments/environment';
 import {Message} from '../../../../models/message.model';
@@ -14,7 +14,7 @@ declare var Stomp;
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnDestroy {
+export class ChatComponent implements OnDestroy, OnInit {
   @Input() public chat: ChatFromList;
   @Output() public clickChatEvent = new EventEmitter();
   private stompClient;
@@ -22,6 +22,10 @@ export class ChatComponent implements OnDestroy {
   constructor(private messagesService: MessagesService, private chatsService: ChatsService,
               private authenticationService: AuthenticationService) {
     this.initializeMessageWebSocketConnection();
+  }
+
+  ngOnInit(): void {
+    this.chat.imageUrl = this.getImage();
   }
 
   ngOnDestroy(): void {
@@ -47,6 +51,11 @@ export class ChatComponent implements OnDestroy {
 
   public isChatEmpty(): boolean{
     return this.chat.lastUserLogin === '';
+  }
+
+  public getImage(): string{
+    return this.chat.imageUrl === null ? './assets/images/avatar/chat.jpg'
+      : this.chat.imageUrl;
   }
 
   private initializeMessageWebSocketConnection(): void{

@@ -1,12 +1,10 @@
 .chat{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
   background-color: rgb(220, 221, 245);
-  margin: 10px;
   height: 100%;
   color: #363656;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 .chat_clicked{
   color: rgb(220, 221, 245);
@@ -16,7 +14,24 @@
   display: none;
 }
 .chat__information{
+  align-items: center;
   padding: 5px;
+}
+.chat__information__content{
+  font-weight: bold;
+  color: #363656;
+}
+.chat__information__content_clicked{
+  color: rgb(220, 221, 245);
+}
+.chat__information__container{
+  padding-left: 5px;
+}
+.chat__information__container__image{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
 .chat__new-messages_hidden{
   display: none;
@@ -28,9 +43,14 @@
   display: block;
   background-color: #2BE940;
 }
-.chat__information__message{
+.chat__information__content__message{
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+@media screen and (max-width: 768px){
+  .chat__information__container{
+    display: none;
+  }
 }

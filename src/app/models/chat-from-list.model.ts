@@ -6,9 +6,10 @@ export class ChatFromList{
   public isClicked: boolean;
   public isShown: boolean;
   public read: boolean;
+  public imageUrl: string;
 
   constructor(chatName: string, lastUserLogin: string, lastMessage: string,
-              id: number, isClicked: boolean, isShown: boolean, isRead: boolean) {
+              id: number, isClicked: boolean, isShown: boolean, isRead: boolean, imageUrl: string) {
     this.id = id;
     this.chatName = chatName;
     this.lastUserLogin = lastUserLogin;
@@ -16,7 +17,6 @@ export class ChatFromList{
     this.isClicked = isClicked;
     this.isShown = isShown;
     this.read = isRead;
+    this.imageUrl = imageUrl;
   }
-
-
 }
