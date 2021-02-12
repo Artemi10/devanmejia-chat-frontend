@@ -22,6 +22,8 @@ import {UserComponent} from './components/chat-place/create-chat-panel/user/user
 import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
 import { ChatPanelComponent } from './components/chat-place/chat-list/chat-panel/chat-panel.component';
 import { LogOutPanelComponent } from './components/chat-place/log-out-panel/log-out-panel.component';
+import { CurrentUserProfileComponent } from './components/chat-place/current-user-profile/current-user-profile.component';
+import { UserProfileComponent } from './components/chat-place/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { LogOutPanelComponent } from './components/chat-place/log-out-panel/log-
       ChatComponent,
       UserComponent,
       ChatPanelComponent,
-      LogOutPanelComponent
+      LogOutPanelComponent,
+      CurrentUserProfileComponent,
+      UserProfileComponent
     ],
   imports: [
     BrowserModule,

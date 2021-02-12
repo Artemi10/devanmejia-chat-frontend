@@ -9,6 +9,11 @@ import {CurrentUserService} from '../../../services/current-user/current-user.se
 })
 export class NavigationComponent  {
   @Output() public clickCreateChatButton = new EventEmitter();
+  @Output() public clickUserImage = new EventEmitter();
 
   constructor(public currentUserService: CurrentUserService) {}
+
+  public clickImageListener(): void{
+    this.clickUserImage.emit(this.currentUserService.user);
+  }
 }

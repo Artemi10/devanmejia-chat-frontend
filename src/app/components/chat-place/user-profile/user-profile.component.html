@@ -1,0 +1,30 @@
+<div class="user-profile">
+  <div class="user-profile__container">
+    <div class="user-profile__container__close-icon">
+      <img class="user-profile__container__close-icon__img" src="./assets/images/icons/close.png" (click)="clickCloseIconListener()">
+    </div>
+    <div class="user-profile__container__profile">
+      <div class="row no-gutters">
+        <p class="user-profile__container__tittle">User information</p>
+      </div>
+      <div class="row no-gutters">
+        <img class="user-profile__container__user-image" src="{{user.imageUrl}}">
+        <div class="user-profile__container__user-information">
+          <div class="user-profile__container__user-information__row">
+            <p class="user-profile__container__user-information__row__label">Login: </p>
+            <p class="user-profile__container__user-information__row__content">{{user.login}}</p>
+          </div>
+          <div class="user-profile__container__user-information__row">
+            <p class="user-profile__container__user-information__row__label">First name: </p>
+            <p class="user-profile__container__user-information__row__content">{{user.firstName}}</p>
+          </div>
+          <div class="user-profile__container__user-information__row">
+            <p class="user-profile__container__user-information__row__label">Last name: </p>
+            <p class="user-profile__container__user-information__row__content">{{user.lastName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

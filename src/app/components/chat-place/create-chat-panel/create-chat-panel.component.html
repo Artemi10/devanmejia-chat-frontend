@@ -7,7 +7,7 @@
   <input class="panel__chat-name" type="text" placeholder="Chat name" [(ngModel)]="chatName" [ngClass]="{'panel__chat-name_error' : isChatNameEmpty()}">
   <div class="panel__user-list">
     <p class="panel__user-list__tittle">Choose users:</p>
-    <app-user *ngFor="let user of usersService.users" [user]="user" (addUserToChatEvent)="addUserToChatList($event)" (deleteUserFromChatEvent)="deleteUserFromChatList($event)"></app-user>
+    <app-user *ngFor="let user of usersService.users" [user]="user" (clickUserEvent)="clickUserEventListener($event)" (addUserToChatEvent)="addUserToChatList($event)" (deleteUserFromChatEvent)="deleteUserFromChatList($event)"></app-user>
   </div>
   <button class="panel__create-button" [disabled]="isCreateButtonDisabled()" (click)="createChat()">Create</button>
 </div>

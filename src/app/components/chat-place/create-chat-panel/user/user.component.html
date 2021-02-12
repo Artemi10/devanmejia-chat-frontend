@@ -1,6 +1,6 @@
 <div class="user" *ngIf="currentUserName != user.login">
   <img class="user__image" src="{{user.imageUrl}}">
-  <p class="user__login">{{user.login}}</p>
+  <p class="user__login" (click)="clickUserEventListener()">{{user.login}}</p>
   <button class="user__add-button" *ngIf="showAddButton" (click)="clickAddUserButtonListener()">+</button>
   <button class="user__delete-button" *ngIf="!showAddButton" (click)="clickDeleteUserButtonListener()">-</button>
 </div>

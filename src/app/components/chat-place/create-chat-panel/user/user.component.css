@@ -4,6 +4,10 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  background-color: rgb(220, 221, 245);
+  padding: 10px;
+  color: #585886;
+  font-weight: bold;
 }
 .user__image{
   width: 35px;
@@ -11,7 +15,7 @@
 }
 .user__login{
   margin-right: 15px;
-  color: rgb(220, 221, 245);
+  cursor: pointer;
 }
 .user__add-button{
   outline: none !important;

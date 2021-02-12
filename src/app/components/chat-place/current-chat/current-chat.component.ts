@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
-import {Message} from '../../../models/message.model';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {MessagesService} from '../../../services/messages/messages.service';
 
 

@@ -26,6 +26,10 @@ export class CurrentUserService {
       }, error => console.log(error));
   }
 
+  public updateUser(user: User): Promise<any>{
+    return this.http.patch(environment.url + '/api/user', user).toPromise();
+  }
+
   private setImageURL(): void{
     if (this.user.imageUrl === null){
       this.user.imageUrl = this.user.male ? './assets/images/avatar/male.png' : './assets/images/avatar/female.jpg';

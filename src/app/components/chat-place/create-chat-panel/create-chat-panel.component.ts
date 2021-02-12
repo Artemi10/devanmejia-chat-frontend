@@ -17,6 +17,7 @@ export class CreateChatPanelComponent {
   private chatUsersAmount = 0;
   @Output() public createNewChatEvent = new EventEmitter();
   @Output() public closeCreateChatPanelEvent = new EventEmitter();
+  @Output() public showUserProfileEvent = new EventEmitter();
 
   constructor(public usersService: UsersService, private chatsService: ChatsService) {}
 
@@ -53,6 +54,9 @@ export class CreateChatPanelComponent {
     this.closeCreateChatPanelEvent.emit();
   }
 
+  public clickUserEventListener(user: User): void{
+    this.showUserProfileEvent.emit(user);
+  }
 
 
 

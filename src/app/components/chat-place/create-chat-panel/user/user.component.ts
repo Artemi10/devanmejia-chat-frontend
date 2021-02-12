@@ -13,6 +13,7 @@ export class UserComponent{
   public showAddButton: boolean;
   @Output() public deleteUserFromChatEvent = new EventEmitter();
   @Output() public addUserToChatEvent = new EventEmitter();
+  @Output() public clickUserEvent = new EventEmitter();
 
   constructor(private authenticationService: AuthenticationService) {
     this.currentUserName = this.authenticationService.getUserName();
@@ -26,6 +27,9 @@ export class UserComponent{
   public clickDeleteUserButtonListener(): void{
     this.deleteUserFromChatEvent.emit(this.user);
     this.showAddButton = !this.showAddButton;
+  }
+  public clickUserEventListener(): void{
+    this.clickUserEvent.emit(this.user);
   }
 
 }
