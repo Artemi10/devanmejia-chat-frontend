@@ -1,8 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {User} from '../../../models/user.model';
-import {UsersService} from '../../../services/users/users.service';
-import {NewChat} from '../../../models/new-chat.model';
-import {ChatsService} from '../../../services/chats/chats.service';
+import {User} from '../../../../models/user.model';
+import {UsersService} from '../../../../services/users/users.service';
+import {NewChat} from '../../../../models/new-chat.model';
+import {ChatsService} from '../../../../services/chats/chats.service';
+import {ChatFromList} from '../../../../models/chat-from-list.model';
 
 
 @Component({
@@ -34,8 +35,8 @@ export class CreateChatPanelComponent {
     if (this.chatUsers.length > 0 && this.chatName !== ''){
       const newChat: NewChat = new NewChat(this.chatName, this.chatUsers);
       this.chatsService.createChat(newChat)
-        .subscribe((id: number) => {
-          this.createNewChatEvent.emit(id);
+        .subscribe((chat: ChatFromList) => {
+          this.createNewChatEvent.emit(chat);
         });
     }
     else{

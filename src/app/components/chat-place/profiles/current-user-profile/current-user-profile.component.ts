@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {User} from '../../../models/user.model';
-import {CurrentUserService} from '../../../services/current-user/current-user.service';
+import {User} from '../../../../models/user.model';
+import {CurrentUserService} from '../../../../services/current-user/current-user.service';
 
 
 @Component({

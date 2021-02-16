@@ -15,15 +15,20 @@ import { RouterModule } from '@angular/router';
 import {CurrentChatComponent} from './components/chat-place/current-chat/current-chat.component';
 import { MessageComponent } from './components/chat-place/current-chat/message/message.component';
 import { FooterComponent } from './components/chat-place/footer/footer.component';
-import {CreateChatPanelComponent} from './components/chat-place/create-chat-panel/create-chat-panel.component';
-import {ChatListComponent} from './components/chat-place/chat-list/chat-list.component';
-import {ChatComponent} from './components/chat-place/chat-list/chat/chat.component';
-import {UserComponent} from './components/chat-place/create-chat-panel/user/user.component';
+import { ChatHeaderComponent } from './components/chat-place/chat-header/chat-header.component';
+import { ChatInformationComponent } from './components/chat-place/chat-panel/chat-information/chat-information.component';
+import { ChatUserComponent } from './components/chat-place/chat-panel/chat-information/chat-user/chat-user.component';
+import {CurrentUserProfileComponent} from './components/chat-place/profiles/current-user-profile/current-user-profile.component';
+import {UserProfileComponent} from './components/chat-place/profiles/user-profile/user-profile.component';
+import {LogOutPanelComponent} from './components/chat-place/chat-panel/log-out-panel/log-out-panel.component';
+import {ChatPanelComponent} from './components/chat-place/chat-panel/chat-list/chat-panel/chat-panel.component';
+import {UserComponent} from './components/chat-place/chat-panel/create-chat-panel/user/user.component';
+import {ChatListComponent} from './components/chat-place/chat-panel/chat-list/chat-list.component';
+import {CreateChatPanelComponent} from './components/chat-place/chat-panel/create-chat-panel/create-chat-panel.component';
+import {ChatComponent} from './components/chat-place/chat-panel/chat-list/chat/chat.component';
 import {TextareaAutosizeModule} from 'ngx-textarea-autosize';
-import { ChatPanelComponent } from './components/chat-place/chat-list/chat-panel/chat-panel.component';
-import { LogOutPanelComponent } from './components/chat-place/log-out-panel/log-out-panel.component';
-import { CurrentUserProfileComponent } from './components/chat-place/current-user-profile/current-user-profile.component';
-import { UserProfileComponent } from './components/chat-place/user-profile/user-profile.component';
+
+
 
 
 @NgModule({
@@ -44,7 +49,10 @@ import { UserProfileComponent } from './components/chat-place/user-profile/user-
       ChatPanelComponent,
       LogOutPanelComponent,
       CurrentUserProfileComponent,
-      UserProfileComponent
+      UserProfileComponent,
+      ChatHeaderComponent,
+      ChatInformationComponent,
+      ChatUserComponent
     ],
   imports: [
     BrowserModule,

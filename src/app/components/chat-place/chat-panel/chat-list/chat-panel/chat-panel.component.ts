@@ -1,5 +1,5 @@
 import {Component, Output, EventEmitter} from '@angular/core';
-import {ChatsService} from '../../../../services/chats/chats.service';
+import {ChatsService} from '../../../../../services/chats/chats.service';
 
 @Component({
   selector: 'app-chat-panel',

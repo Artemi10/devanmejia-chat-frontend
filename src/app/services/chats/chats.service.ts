@@ -30,8 +30,9 @@ export class ChatsService {
   public createChat(chat: NewChat): Observable<any>{
     return this.http.post(environment.url + '/api/chat', chat)
       .pipe(map((id: number) => {
-        this.addNewChat(new ChatFromList(chat.chatName, '', '', id, false, true, true, null));
-        return id;
+        const chatFromList: ChatFromList = new ChatFromList(chat.chatName, '', '', id, false, true, true, null);
+        this.addNewChat(chatFromList);
+        return chatFromList;
       }));
   }
 

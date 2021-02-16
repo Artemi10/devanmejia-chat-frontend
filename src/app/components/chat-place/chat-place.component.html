@@ -8,8 +8,9 @@
   </div>
   <div class="chat_place__container col-8">
     <app-navigation class="chat_place__container__nav" (clickUserImage)="openCurrentUserProfile($event)"></app-navigation>
-    <app-current-chat class="chat_place__container__chat" [ngClass]="{'chat_place__container__chat_footer-opened' : currentChatId != -1}"></app-current-chat>
-    <app-footer class="chat_place__container__footer" *ngIf="currentChatId != -1" [currentChatId]="currentChatId"></app-footer>
+    <app-chat-header [ngClass]="{'hidden' : !isChatOpened()}" [chat]="currentChat"></app-chat-header>
+    <app-current-chat class="chat_place__container__chat" [ngClass]="{'chat_place__container__chat_footer-opened' : isChatListOpened}"></app-current-chat>
+    <app-footer class="chat_place__container__footer" *ngIf="isChatOpened()" [currentChatId]="currentChat.id"></app-footer>
   </div>
 </div>
 

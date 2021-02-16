@@ -40,13 +40,10 @@
   flex-direction: column;
 }
 .chat_place__container__nav{
-  min-height: 75px;
+  min-height: 50px;
 }
 .chat_place__container__chat{
   overflow: auto;
-  height: calc(100% - 75px);
-}
-.chat_place__container__chat_footer-opened{
-  height: calc(100% - 75px - 50px);
+  height: calc(100% - 50px);
 }
 

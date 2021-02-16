@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges} from '@angular/core';
-import {ChatsService} from '../../../services/chats/chats.service';
-import {Message} from '../../../models/message.model';
-import {ChatFromList} from '../../../models/chat-from-list.model';
+import {ChatsService} from '../../../../services/chats/chats.service';
+import {Message} from '../../../../models/message.model';
+import {ChatFromList} from '../../../../models/chat-from-list.model';
 
 @Component({
   selector: 'app-chat-list',
@@ -16,9 +16,9 @@ export class ChatListComponent{
     chatsService.getChats();
   }
 
-  public clickChatEventListener(id: number): void{
-    this.chatsService.clickChat(id);
-    this.clickChatEvent.emit(id);
+  public clickChatEventListener(chat: ChatFromList): void{
+    this.chatsService.clickChat(chat.id);
+    this.clickChatEvent.emit(chat);
   }
   public clickCreateButtonEventListener(): void{
     this.clickCreateButtonEvent.emit();

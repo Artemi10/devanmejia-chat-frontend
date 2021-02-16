@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import {MessagesService} from '../../services/messages/messages.service';
 import {User} from '../../models/user.model';
+import {ChatFromList} from '../../models/chat-from-list.model';
 
 
 @Component({
@@ -12,11 +13,10 @@ export class ChatPlaceComponent {
   public isChatListOpened: boolean;
   public isCurrentUserProfileOpened: boolean;
   public isUserProfileOpened: boolean;
-  public currentChatId: number;
+  public currentChat: ChatFromList;
   public clickedUser: User;
 
   constructor(public messagesService: MessagesService) {
-    this.currentChatId = -1;
     this.isChatListOpened = true;
     this.isCurrentUserProfileOpened = false;
     this.isUserProfileOpened = false;
@@ -25,9 +25,9 @@ export class ChatPlaceComponent {
   public clickCreateChatButtonListener(): void {
     this.isChatListOpened = false;
   }
-  public chooseNewChatListener(id: number): void {
-    this.currentChatId = id;
-    this.messagesService.getMessagesByChatId(id);
+  public chooseNewChatListener(chat: ChatFromList): void {
+    this.currentChat = chat;
+    this.messagesService.getMessagesByChatId(chat.id);
     this.isChatListOpened = true;
   }
   public closeCreateChatPanel(): void {
@@ -48,5 +48,10 @@ export class ChatPlaceComponent {
     this.clickedUser = user;
     this.isCurrentUserProfileOpened = false;
     this.isUserProfileOpened = true;
+  }
+  public isChatOpened(): boolean{
+    if (this.currentChat){
+      return true;
+    }
   }
 }
