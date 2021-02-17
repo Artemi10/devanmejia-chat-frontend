@@ -9,6 +9,7 @@ import {User} from '../../../../models/user.model';
 export class ChatUserComponent implements OnInit {
   @Input() user: User;
   @Input() isAdmin: boolean;
+  @Input() showDeleteButton: boolean;
 
   constructor() { }
 

@@ -21,3 +21,9 @@
 .user__admin-icon_hidden{
   display: none;
 }
+.user__delete-button{
+  width: 20px;
+  height: 20px;
+  color: #c01934;
+  border-radius: 3px;
+}

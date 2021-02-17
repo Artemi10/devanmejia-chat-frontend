@@ -33,4 +33,7 @@ export class ChatInformationComponent implements OnChanges{
   public isCurrentUser(user: User): boolean{
     return user.login === this.authenticationService.getUserName();
   }
+  public isCurrentUserAdmin(): boolean{
+    return this.chat.adminUser.login === this.authenticationService.getUserName();
+  }
 }
