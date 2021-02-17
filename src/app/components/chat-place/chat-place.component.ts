@@ -15,6 +15,7 @@ export class ChatPlaceComponent {
   public isChatInformationPanelOpened: boolean;
   public isCurrentUserProfileOpened: boolean;
   public isUserProfileOpened: boolean;
+  public isUserListOpened: boolean;
   public currentChat: ChatFromList;
   public clickedUser: User;
 
@@ -24,6 +25,7 @@ export class ChatPlaceComponent {
     this.isChatInformationPanelOpened = false;
     this.isCurrentUserProfileOpened = false;
     this.isUserProfileOpened = false;
+    this.isUserListOpened = false;
   }
 
   // chat list
@@ -32,15 +34,28 @@ export class ChatPlaceComponent {
     this.messagesService.getMessagesByChatId(chat.id);
     this.isCreateChatPanelOpened = false;
     this.isChatInformationPanelOpened = false;
+    this.isUserListOpened = false;
     this.isChatListOpened = true;
   }
   public closeChatList(): void{
     this.isChatListOpened = false;
   }
+  // user list
+  public openUserList(): void{
+    this.isCreateChatPanelOpened = false;
+    this.isChatInformationPanelOpened = false;
+    this.isChatListOpened = false;
+    this.isUserListOpened = true;
+  }
+  public closeUserList(): void{
+    this.isUserListOpened = false;
+    this.isChatListOpened = true;
+  }
   // create chat panel
   public openCreateChatPanel(): void{
     this.isChatInformationPanelOpened = false;
     this.isChatListOpened = false;
+    this.isUserListOpened = false;
     this.isCreateChatPanelOpened = true;
   }
   public closeCreateChatPanel(): void{
@@ -51,6 +66,7 @@ export class ChatPlaceComponent {
   public openChatInformationPanel(): void{
     this.isChatListOpened = false;
     this.isCreateChatPanelOpened = false;
+    this.isUserListOpened = false;
     this.isChatInformationPanelOpened = true;
   }
   public closeChatInformationPanel(): void{
@@ -61,6 +77,7 @@ export class ChatPlaceComponent {
   public openCurrentUserProfile(user: User): void{
     this.clickedUser = user;
     this.isCurrentUserProfileOpened = true;
+    this.isUserListOpened = false;
     this.isUserProfileOpened = false;
   }
   public closeCurrentUserProfile(): void{

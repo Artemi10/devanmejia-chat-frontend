@@ -1,0 +1,12 @@
+<div class="panel">
+  <div class="panel__header">
+    <p class="panel__header__go-back" (click)="clickGoBackButtonListener()"><</p>
+    <p class="panel__header__tittle">User list</p>
+    <p class="panel__header__container"></p>
+  </div>
+  <div class="panel__user-list">
+    <ng-container *ngFor="let user of usersService.users">
+      <app-chat-user *ngIf="!isCurrentUser(user)" [showDeleteButton]="false" [user]="user" [isAdmin]="false"></app-chat-user>
+    </ng-container>
+  </div>
+</div>

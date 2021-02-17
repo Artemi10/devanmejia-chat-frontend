@@ -25,15 +25,17 @@
   width: 25px;
   color: rgb(255, 255, 255);
   font-weight: bold;
+  border-radius: 5px;
 }
 .user__delete-button{
   outline: none !important;
   border: none;
   width: 25px;
   padding: 5px;
-  background-color: #c01934;
   color: rgb(255, 255, 255);
   font-weight: bold;
+  background-color: #c01934;
+  border-radius: 5px;
 }
 .user__delete-button,
 .user__add-button{

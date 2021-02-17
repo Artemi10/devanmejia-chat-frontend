@@ -12,4 +12,8 @@ export class ChatService {
   public getChatById(id: number): Promise<any>{
     return this.http.get(environment.url + `/api/chat/${id}`).toPromise();
   }
+
+  public deleteUserFromChat(userLogin: string, chatId: number): Promise<any>{
+    return this.http.delete(environment.url + `/api/user/${userLogin}/chat/${chatId}`).toPromise();
+  }
 }

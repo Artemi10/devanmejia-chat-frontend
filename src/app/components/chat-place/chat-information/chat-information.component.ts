@@ -21,7 +21,7 @@ export class ChatInformationComponent implements OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.chatId !== -1){
+    if (this.chatId !== undefined){
       this.chatService.getChatById(this.chatId)
         .then((chat: Chat) => this.chat = chat);
     }
@@ -35,5 +35,12 @@ export class ChatInformationComponent implements OnChanges{
   }
   public isCurrentUserAdmin(): boolean{
     return this.chat.adminUser.login === this.authenticationService.getUserName();
+  }
+
+  public deleteChatUser(user: User): void{
+    this.chatService.deleteUserFromChat(user.login, this.chatId)
+      .then(() => {
+        this.chat.users.splice(this.chat.users.indexOf(user), 1);
+      });
   }
 }

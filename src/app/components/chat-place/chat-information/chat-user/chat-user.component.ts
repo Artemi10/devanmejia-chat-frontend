@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {User} from '../../../../models/user.model';
 
 @Component({
@@ -10,6 +10,7 @@ export class ChatUserComponent implements OnInit {
   @Input() user: User;
   @Input() isAdmin: boolean;
   @Input() showDeleteButton: boolean;
+  @Output() deleteUserFromChatEvent = new EventEmitter();
 
   constructor() { }
 
@@ -19,4 +20,7 @@ export class ChatUserComponent implements OnInit {
     }
   }
 
+  public clickDeleteButtonListener(): void{
+    this.deleteUserFromChatEvent.emit(this.user);
+  }
 }
