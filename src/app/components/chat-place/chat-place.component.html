@@ -2,15 +2,16 @@
   <app-current-user-profile *ngIf="isCurrentUserProfileOpened" [user]="clickedUser" (clickCloseIconEvent)="closeCurrentUserProfile()"></app-current-user-profile>
   <app-user-profile *ngIf="isUserProfileOpened" [user]="clickedUser" (clickCloseIconEvent)="closeUserProfile()"></app-user-profile>
   <div class="chat-place__lists col-4">
-    <app-chat-list class="chat-place__lists__list" [ngClass]="{'hidden' : !isChatListOpened}" (clickChatEvent)="chooseNewChatListener($event)" (clickCreateButtonEvent)="clickCreateChatButtonListener()"></app-chat-list>
-    <app-create-chat-panel class="chat-place__lists__list" [ngClass]="{'hidden' : isChatListOpened}" (showUserProfileEvent)="openUserProfile($event)" (createNewChatEvent)="chooseNewChatListener($event)" (closeCreateChatPanelEvent)="closeCreateChatPanel()"></app-create-chat-panel>
+    <app-chat-list class="chat-place__lists__list" [ngClass]="{'hidden' : !isChatListOpened}" (clickChatEvent)="openChatList($event)" (clickCreateButtonEvent)="openCreateChatPanel()"></app-chat-list>
+    <app-create-chat-panel class="chat-place__lists__list" [ngClass]="{'hidden' : !isCreateChatPanelOpened}" (showUserProfileEvent)="openUserProfile($event)" (createNewChatEvent)="chooseNewChatListener($event)" (closeCreateChatPanelEvent)="closeCreateChatPanel()"></app-create-chat-panel>
+    <app-chat-information class="chat-place__chat-inf" [ngClass]="{'hidden' : !isChatInformationPanelOpened}" [chatId]="currentChat?.id" (closeChatInformationPanelEvent)="closeChatInformationPanel()"></app-chat-information>
     <app-log-out-panel class="chat-place__lists__log-out-panel"></app-log-out-panel>
   </div>
   <div class="chat_place__container col-8">
     <app-navigation class="chat_place__container__nav" (clickUserImage)="openCurrentUserProfile($event)"></app-navigation>
-    <app-chat-header [ngClass]="{'hidden' : !isChatOpened()}" [chat]="currentChat"></app-chat-header>
-    <app-current-chat class="chat_place__container__chat" [ngClass]="{'chat_place__container__chat_footer-opened' : isChatListOpened}"></app-current-chat>
-    <app-footer class="chat_place__container__footer" *ngIf="isChatOpened()" [currentChatId]="currentChat.id"></app-footer>
+    <app-chat-header [ngClass]="{'hidden' : !isChatOpened()}" [chat]="currentChat" (clickChatInformationButtonEvent)="openChatInformationPanel()"></app-chat-header>
+    <app-current-chat class="chat_place__container__chat"></app-current-chat>
+    <app-footer class="chat_place__container__footer" *ngIf="isChatOpened()" [currentChatId]="currentChat?.id"></app-footer>
   </div>
 </div>
 

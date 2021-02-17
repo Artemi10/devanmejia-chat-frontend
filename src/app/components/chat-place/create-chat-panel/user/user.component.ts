@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {User} from '../../../../../models/user.model';
-import {AuthenticationService} from '../../../../../services/authentication/authentication.service';
+import {User} from '../../../../models/user.model';
+import {AuthenticationService} from '../../../../services/authentication/authentication.service';
 
 @Component({
   selector: 'app-user',

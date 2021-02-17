@@ -26,6 +26,12 @@
   min-height: calc(100% - 50px);
   overflow: auto;
 }
+.chat-place__chat-inf{
+  padding: 5px;
+  background: rgba(63, 63, 95, 0.9);
+  min-height: calc(100% - 50px);
+  overflow: auto;
+}
 .chat-place__lists__log-out-panel{
   height: 50px;
   background-color: #585886;

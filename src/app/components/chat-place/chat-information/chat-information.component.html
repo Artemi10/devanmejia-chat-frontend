@@ -1,0 +1,14 @@
+<div class="panel">
+  <div class="panel__header">
+    <p class="panel__header__go-back" (click)="clickGoBackButtonListener()"><</p>
+    <p class="panel__header__tittle">Chat information</p>
+    <p class="panel__header__container"></p>
+  </div>
+  <p class="panel__chat-tittle">{{chat?.chatName}}</p>
+  <div class="panel__user-list">
+    <p class="panel__user-list__tittle">Chat users</p>
+    <ng-container *ngFor="let user of chat?.users">
+      <app-chat-user *ngIf="!isCurrentUser(user)"  [user]="user" [isAdmin]="isAdminUser(user)"></app-chat-user>
+    </ng-container>
+  </div>
+</div>

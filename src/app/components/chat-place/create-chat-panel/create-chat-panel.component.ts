@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {User} from '../../../../models/user.model';
-import {UsersService} from '../../../../services/users/users.service';
-import {NewChat} from '../../../../models/new-chat.model';
-import {ChatsService} from '../../../../services/chats/chats.service';
-import {ChatFromList} from '../../../../models/chat-from-list.model';
+import {User} from '../../../models/user.model';
+import {UsersService} from '../../../services/users/users.service';
+import {NewChat} from '../../../models/new-chat.model';
+import {ChatsService} from '../../../services/chats/chats.service';
+import {ChatFromList} from '../../../models/chat-from-list.model';
 
 
 @Component({

@@ -1,10 +1,10 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {ChatFromList} from '../../../../../models/chat-from-list.model';
-import {environment} from '../../../../../../environments/environment';
-import {Message} from '../../../../../models/message.model';
-import {MessagesService} from '../../../../../services/messages/messages.service';
-import {ChatsService} from '../../../../../services/chats/chats.service';
-import {AuthenticationService} from '../../../../../services/authentication/authentication.service';
+import {ChatFromList} from '../../../../models/chat-from-list.model';
+import {environment} from '../../../../../environments/environment';
+import {Message} from '../../../../models/message.model';
+import {MessagesService} from '../../../../services/messages/messages.service';
+import {ChatsService} from '../../../../services/chats/chats.service';
+import {AuthenticationService} from '../../../../services/authentication/authentication.service';
 
 declare var SockJS;
 declare var Stomp;

@@ -1,0 +1,23 @@
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #DCDDF5;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.user__admin-icon,
+.user__img{
+  display: block;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+.user__inf{
+  font-weight: bold;
+  color: #585886;
+}
+.user__admin-icon_hidden{
+  display: none;
+}

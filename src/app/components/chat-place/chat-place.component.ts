@@ -11,6 +11,8 @@ import {ChatFromList} from '../../models/chat-from-list.model';
 })
 export class ChatPlaceComponent {
   public isChatListOpened: boolean;
+  public isCreateChatPanelOpened: boolean;
+  public isChatInformationPanelOpened: boolean;
   public isCurrentUserProfileOpened: boolean;
   public isUserProfileOpened: boolean;
   public currentChat: ChatFromList;
@@ -18,21 +20,44 @@ export class ChatPlaceComponent {
 
   constructor(public messagesService: MessagesService) {
     this.isChatListOpened = true;
+    this.isCreateChatPanelOpened = false;
+    this.isChatInformationPanelOpened = false;
     this.isCurrentUserProfileOpened = false;
     this.isUserProfileOpened = false;
   }
 
-  public clickCreateChatButtonListener(): void {
-    this.isChatListOpened = false;
-  }
-  public chooseNewChatListener(chat: ChatFromList): void {
+  // chat list
+  public openChatList(chat: ChatFromList): void{
     this.currentChat = chat;
     this.messagesService.getMessagesByChatId(chat.id);
+    this.isCreateChatPanelOpened = false;
+    this.isChatInformationPanelOpened = false;
     this.isChatListOpened = true;
   }
-  public closeCreateChatPanel(): void {
+  public closeChatList(): void{
+    this.isChatListOpened = false;
+  }
+  // create chat panel
+  public openCreateChatPanel(): void{
+    this.isChatInformationPanelOpened = false;
+    this.isChatListOpened = false;
+    this.isCreateChatPanelOpened = true;
+  }
+  public closeCreateChatPanel(): void{
+    this.isCreateChatPanelOpened = false;
     this.isChatListOpened = true;
   }
+  // current user profile
+  public openChatInformationPanel(): void{
+    this.isChatListOpened = false;
+    this.isCreateChatPanelOpened = false;
+    this.isChatInformationPanelOpened = true;
+  }
+  public closeChatInformationPanel(): void{
+    this.isChatInformationPanelOpened = false;
+    this.isChatListOpened = true;
+  }
+  // chat information panel
   public openCurrentUserProfile(user: User): void{
     this.clickedUser = user;
     this.isCurrentUserProfileOpened = true;
@@ -40,14 +65,22 @@ export class ChatPlaceComponent {
   }
   public closeCurrentUserProfile(): void{
     this.isCurrentUserProfileOpened = false;
+    this.isChatListOpened = true;
   }
-  public closeUserProfile(): void{
-    this.isUserProfileOpened = false;
-  }
+  // user profile
   public openUserProfile(user: User): void{
     this.clickedUser = user;
     this.isCurrentUserProfileOpened = false;
     this.isUserProfileOpened = true;
+  }
+  public closeUserProfile(): void{
+    this.isUserProfileOpened = false;
+  }
+
+  public chooseNewChatListener(chat: ChatFromList): void {
+    this.currentChat = chat;
+    this.messagesService.getMessagesByChatId(chat.id);
+    this.isChatListOpened = true;
   }
   public isChatOpened(): boolean{
     if (this.currentChat){

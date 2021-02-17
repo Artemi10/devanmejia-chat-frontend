@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges} from '@angular/core';
-import {ChatsService} from '../../../../services/chats/chats.service';
-import {Message} from '../../../../models/message.model';
-import {ChatFromList} from '../../../../models/chat-from-list.model';
+import {ChatsService} from '../../../services/chats/chats.service';
+import {Message} from '../../../models/message.model';
+import {ChatFromList} from '../../../models/chat-from-list.model';
 
 @Component({
   selector: 'app-chat-list',

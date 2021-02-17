@@ -1,0 +1,10 @@
+<div class="user">
+  <img class="user__img" src="{{user.imageUrl}}">
+  <div class="user__inf">
+    <p class="user__login">{{user.login}}</p>
+    <p class="user__name">{{user.firstName}} {{user.lastName}}</p>
+  </div>
+  <div>
+    <img class="user__admin-icon" [ngClass]="{'user__admin-icon_hidden': !isAdmin}" src="../../../../../assets/images/icons/admin.png">
+  </div>
+</div>
